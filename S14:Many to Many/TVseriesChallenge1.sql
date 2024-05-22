@@ -1,3 +1,5 @@
+-- Show title and rating
+
 SELECT 
     title, rating
 FROM
