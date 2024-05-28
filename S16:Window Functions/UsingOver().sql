@@ -1,3 +1,5 @@
+CREATE DATABASE window_funcs;
+
 CREATE TABLE employees (
     emp_no INT PRIMARY KEY AUTO_INCREMENT,
     department VARCHAR(20),
