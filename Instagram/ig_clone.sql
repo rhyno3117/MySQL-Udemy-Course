@@ -9,3 +9,9 @@ CREATE TABLE users (
 
 DESCRIBE users;
  
+INSERT INTO users (username) VALUES
+('BlueTheCat'),
+('CharlieBrown'),
+('ColtSteele');
+
+SELECT * FROM users;
