@@ -40,3 +40,9 @@ INNER JOIN users
 GROUP BY photos.id
 ORDER BY total DESC
 LIMIT 1;
+
+-- Our Investors want to know..
+-- How many times does the average user post?
+-- Calculate avg number of photos per user
+SELECT 
+(SELECT Count(*) FROM   photos) / (SELECT Count(*) FROM   users) AS avg; 
