@@ -37,3 +37,6 @@ https://www.youtube.com/c/techTFQ
 https://www.youtube.com/c/LearnatKnowstar
 
 https://www.youtube.com/channel/UCfGTc8zyBjCGg-Ilc4oAxEg/videos
+
+# Project.1
+This project uses Faker which is a tool that allows you to create fake placeholder data to use.
