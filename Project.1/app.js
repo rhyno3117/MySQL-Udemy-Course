@@ -1,4 +1,4 @@
-// var { faker } = require('@faker-js/faker');
+var { faker } = require('@faker-js/faker');
 var mysql = require('mysql');
 
 var connection = mysql.createConnection({
@@ -26,16 +26,12 @@ var connection = mysql.createConnection({
 //  });
 
 // Inserting DATA 2
-var person = {email: 'Jenny467@gmail.com'};
+var person = {email: faker.internet.email()};
 
 connection.query('INSERT INTO users SET ?', person, function(err, result) {
     if (err) throw err;
     console.log(result);
   });
-
-
-
-
 
  connection.end();
 
