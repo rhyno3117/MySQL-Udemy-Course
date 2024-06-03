@@ -4,8 +4,16 @@ var mysql = require('mysql');
 var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
+    password: 'cocomysql',
     database: 'join_us'
   });  
+
+  var q = 'SELECT CURDATE()';
+
+  connection.query(q, function (error, results, fields) {
+    if (error) throw error;
+    console.log(results);
+ });
 
 // console.log(faker.internet.email());
 // console.log(faker.date.past());
