@@ -41,11 +41,13 @@ var connection = mysql.createConnection({
 
 
 // Inserting Lots of DATA 3!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-var data = [
-    ['blah@gmail.com', '2017-05-01 03:51:37'],
-    ['ugh@gmail.com', '2017-05-01 03:51:37'],
-    ['meh@gmail.com', '2017-05-01 03:51:37']
-];
+var data = [];
+for(var i = 0; i < 500; i++){
+    data.push([
+        faker.internet.email(),
+        faker.date.past()
+    ]);
+}
 
 var q = 'INSERT INTO users (email, created_at) VALUES ?';
  
