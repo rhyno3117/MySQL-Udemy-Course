@@ -15,6 +15,8 @@ var connection = mysql.createConnection({
     console.log(results);
  });
 
+ connection.end();
+
 // console.log(faker.internet.email());
 // console.log(faker.date.past());
 
