@@ -1,4 +1,7 @@
 var { faker } = require('@faker-js/faker');
+var mysql = require('mysql');
+
+
 
 // console.log(faker.internet.email());
 // console.log(faker.date.past());
