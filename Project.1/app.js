@@ -25,28 +25,33 @@ var connection = mysql.createConnection({
 //     console.log(results);
 //  });
 
+
 // Inserting DATA 2
-var person = {
-    email: faker.internet.email(),
-    created_at: faker.date.past()
-};
+// var person = {
+//     email: faker.internet.email(),
+//     created_at: faker.date.past()
+// };
 
-var end_result = connection.query('INSERT INTO users SET ?', person, function (err, result) {
-    if (err) throw err;
-    console.log(result);
+// var end_result = connection.query('INSERT INTO users SET ?', person, function (err, result) {
+//     if (err) throw err;
+//     console.log(result);
+// });
+
+// connection.end();
+
+
+// Inserting Lots of DATA 3!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+var data = [
+    ['blah@gmail.com', '2017-05-01 03:51:37'],
+    ['ugh@gmail.com', '2017-05-01 03:51:37'],
+    ['meh@gmail.com', '2017-05-01 03:51:37']
+];
+
+var q = 'INSERT INTO users (email, created_at) VALUES ?';
+ 
+connection.query(q, [data], function(err, result) {
+  console.log(err);
+  console.log(result);
 });
-console.log(end_result.sql);
+ 
 connection.end();
-
-
-// console.log(faker.internet.email());
-// console.log(faker.date.past());
-
-// function generateAddress(){
-//     console.log(faker.location.streetAddress());
-//     console.log(faker.location.city());
-//     console.log(faker.location.state());
-//   }
-
-//   generateAddress(); 
-
