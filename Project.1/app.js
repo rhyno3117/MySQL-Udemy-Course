@@ -8,11 +8,13 @@ var connection = mysql.createConnection({
     database: 'join_us'
   });  
 
-  var q = 'SELECT 1+5 AS answer';
+  var q = 'SELECT CURTIME() AS time, CURDATE() AS date, NOW() AS now';
 
   connection.query(q, function (error, results, fields) {
     if (error) throw error;
-    console.log(results[0].answer);
+    console.log(results[0].time);
+    console.log(results[0].date);
+    console.log(results[0].now);
  });
 
  connection.end();
