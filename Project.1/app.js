@@ -8,11 +8,11 @@ var connection = mysql.createConnection({
     database: 'join_us'
   });  
 
-  var q = 'SELECT CURDATE()';
+  var q = 'SELECT 1+5 AS answer';
 
   connection.query(q, function (error, results, fields) {
     if (error) throw error;
-    console.log(results);
+    console.log(results[0].answer);
  });
 
  connection.end();
