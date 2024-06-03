@@ -1,7 +1,11 @@
 var { faker } = require('@faker-js/faker');
 var mysql = require('mysql');
 
-
+var connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    database: 'join_us'
+  });  
 
 // console.log(faker.internet.email());
 // console.log(faker.date.past());
