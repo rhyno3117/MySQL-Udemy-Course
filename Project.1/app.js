@@ -1,4 +1,4 @@
-var { faker } = require('@faker-js/faker');
+// var { faker } = require('@faker-js/faker');
 var mysql = require('mysql');
 
 var connection = mysql.createConnection({
@@ -8,16 +8,37 @@ var connection = mysql.createConnection({
     database: 'join_us'
   });  
 
-  var q = 'SELECT CURTIME() AS time, CURDATE() AS date, NOW() AS now';
+// Selecting DATA
+//   var q = 'SELECT COUNT(*) AS total FROM users';
 
-  connection.query(q, function (error, results, fields) {
-    if (error) throw error;
-    console.log(results[0].time);
-    console.log(results[0].date);
-    console.log(results[0].now);
- });
+//   connection.query(q, function (error, results, fields) {
+//     if (error) throw error;
+//     console.log(results[0].total);
+//  });
+
+
+// Inserting DATA
+//   var q = 'INSERT INTO users (email) VALUES ("rusty_the_dog@email.com")';
+
+//   connection.query(q, function (error, results, fields) {
+//     if (error) throw error;
+//     console.log(results);
+//  });
+
+// Inserting DATA 2
+var person = {email: 'Jenny467@gmail.com'};
+
+connection.query('INSERT INTO users SET ?', person, function(err, result) {
+    if (err) throw err;
+    console.log(result);
+  });
+
+
+
+
 
  connection.end();
+
 
 // console.log(faker.internet.email());
 // console.log(faker.date.past());
