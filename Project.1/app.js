@@ -6,7 +6,7 @@ var connection = mysql.createConnection({
     user: 'root',
     password: 'cocomysql',
     database: 'join_us'
-  });  
+});
 
 // Selecting DATA
 //   var q = 'SELECT COUNT(*) AS total FROM users';
@@ -26,14 +26,17 @@ var connection = mysql.createConnection({
 //  });
 
 // Inserting DATA 2
-var person = {email: faker.internet.email()};
+var person = {
+    email: faker.internet.email(),
+    created_at: faker.date.past()
+};
 
-connection.query('INSERT INTO users SET ?', person, function(err, result) {
+var end_result = connection.query('INSERT INTO users SET ?', person, function (err, result) {
     if (err) throw err;
     console.log(result);
-  });
-
- connection.end();
+});
+console.log(end_result.sql);
+connection.end();
 
 
 // console.log(faker.internet.email());
