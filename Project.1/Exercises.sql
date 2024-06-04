@@ -34,6 +34,6 @@ SELECT CASE
          ELSE 'other' 
        end      AS provider, 
        Count(*) AS total_users 
-FROM   users 
+FROM   users  
 GROUP  BY provider 
 ORDER  BY total_users DESC; 
