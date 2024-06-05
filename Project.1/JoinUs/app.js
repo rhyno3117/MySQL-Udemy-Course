@@ -1,3 +1,7 @@
+// Required express
+// Executed and saved in app variable
+// Started up server to listen and make it run
+// Request is sent on server http://localhost:8080 and we see message with / addded
 var express = require('express');
 var app = express();
 
