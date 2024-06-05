@@ -4,6 +4,7 @@
 // Request is sent on server http://localhost:8080 and we see message with / addded
 var express = require('express');
 var mysql = require('mysql');
+var bodyParser = require('body-parser');
 var app = express();
 
 app.set("view engine", "ejs");
@@ -24,6 +25,10 @@ app.get("/", function (req, res) {
         // res.send("We have " + count + " users in our db")
         res.render("home", {data: count});
     });
+});
+
+app.post("/register", function (req, res) {
+    console.log("Post request send to /register")
 });
 
 app.get("/joke", function (req, res) {
