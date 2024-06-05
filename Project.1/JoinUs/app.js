@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 var app = express();
 
 app.set("view engine", "ejs");
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 var connection = mysql.createConnection({
     host: 'localhost',
@@ -17,6 +17,9 @@ var connection = mysql.createConnection({
     database: 'join_us'
 });
 
+
+
+
 app.get("/", function (req, res) {
     // Find count of users in DB
     var q = "SELECT COUNT(*) AS count FROM users";
@@ -24,13 +27,23 @@ app.get("/", function (req, res) {
         if (err) throw err;
         var count = results[0].count;
         // res.send("We have " + count + " users in our db")
-        res.render("home", {data: count});
+        res.render("home", { data: count });
     });
 });
 
 app.post("/register", function (req, res) {
-    console.log("Post request send to /register email is " + req.body.email)
+    var email = req.body.email;
+    var person = { email: req.body.email };
+    connection.query('INSERT INTO users SET ?', person, function (err, result) {
+        console.log(err);
+        console.log(result);
+        res.redirect("/");
+    });
 });
+
+
+
+
 
 app.get("/joke", function (req, res) {
     var joke = "<strong>What do you call a dog that does magic tricks? </strong> <em>A labradcadabrador</em>"
@@ -41,6 +54,10 @@ app.get("/random_num", function (req, res) {
     var num = Math.floor(Math.random() * 10) + 1;
     res.send("Your lucky number is " + num)
 })
+
+
+
+
 
 app.listen(8080, function () {
     console.log("Server running on port 8080!");
