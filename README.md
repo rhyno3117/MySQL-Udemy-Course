@@ -41,4 +41,7 @@ https://www.youtube.com/channel/UCfGTc8zyBjCGg-Ilc4oAxEg/videos
 # Project.1
 This project uses Faker which is a tool that allows you to create fake placeholder data to use.
 
-# JoinUs Project is project that uses Faker to create emails. Code is built in backend to connect servers.
+# JoinUs Project
+Project that uses Faker to create emails. Code is built in backend to connect servers.
+Starts with node app.js 
+
