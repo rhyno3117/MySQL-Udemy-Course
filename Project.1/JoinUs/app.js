@@ -15,7 +15,8 @@ app.get("/joke", function (req, res) {
 });
 
 app.get("/random_num", function (req, res) {
-    res.send("7")
+    var num = Math.floor(Math.random() * 10) + 1;
+    res.send("Your lucky number is " + num)
 })
 
 app.listen(8080, function () {
