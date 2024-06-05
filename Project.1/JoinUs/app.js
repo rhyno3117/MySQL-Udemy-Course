@@ -6,6 +6,8 @@ var express = require('express');
 var mysql = require('mysql');
 var app = express();
 
+app.set("view engine", "ejs");
+
 var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
