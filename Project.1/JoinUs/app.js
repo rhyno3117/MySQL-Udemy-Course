@@ -9,6 +9,11 @@ app.get("/", function(req, res){
     res.send("You've reached the home page")
 });
 
+app.get("/joke", function(req, res){
+    var joke = "What do you call a dog that does magic tricks? A labradcadabrador"
+    res.send(joke);
+});
+
 app.listen(8080, function(){
     console.log("Server running on port 8080!");
 });
