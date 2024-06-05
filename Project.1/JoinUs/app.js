@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var app = express();
 
 app.set("view engine", "ejs");
+app.use(bodyParser.urlencoded({extended: true}));
 
 var connection = mysql.createConnection({
     host: 'localhost',
@@ -28,7 +29,7 @@ app.get("/", function (req, res) {
 });
 
 app.post("/register", function (req, res) {
-    console.log("Post request send to /register")
+    console.log("Post request send to /register email is " + req.body.email)
 });
 
 app.get("/joke", function (req, res) {
