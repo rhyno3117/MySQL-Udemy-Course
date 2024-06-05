@@ -24,7 +24,7 @@ app.get("/", function (req, res) {
 });
 
 app.get("/joke", function (req, res) {
-    var joke = "What do you call a dog that does magic tricks? A labradcadabrador"
+    var joke = "<strong>What do you call a dog that does magic tricks? </strong> <em>A labradcadabrador</em>"
     res.send(joke);
 });
 
